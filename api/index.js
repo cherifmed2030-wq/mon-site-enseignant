@@ -10,9 +10,8 @@ const fetch = require('node-fetch');
 const { createPool } = require('@vercel/postgres');
 
 const pool = createPool({
-  connectionString: process.env.DATABASE_CONNECTION_URL,
+  connectionString: process.env.DATABASE_CONNECTION_URL || process.env.POSTGRES_URL,
 });
-
 const sql = pool.sql;
 const app = express();
 
@@ -227,5 +226,6 @@ app.post('/api/generate-word', async (req, res) => {
 
 // Exporter l'app pour Vercel
 module.exports = app;
+
 
 
