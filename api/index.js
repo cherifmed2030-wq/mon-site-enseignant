@@ -104,8 +104,18 @@ function getDateForDayNameNode(weekStartDate, dayName) {
   return specificDate;
 }
 
-// --- Ici viennent toutes tes routes API (login, plans, save-plan, save-row, save-notes, all-classes, generate-word)
-// --- Comme tu les avais déjà, elles ne changent pas, seule la connexion DB a été corrigée.
+// --- Routes de test ---
+app.get('/api/test-db', async (req, res) => {
+  try {
+    const { rows } = await sql`SELECT NOW() as now;`;
+    res.status(200).json({ message: "✅ Connexion OK", time: rows[0].now });
+  } catch (error) {
+    console.error("❌ Test DB error:", error);
+    res.status(500).json({ message: "Erreur connexion DB", error: error.message });
+  }
+});
+
+// --- Ici, remets toutes tes routes API existantes (login, save-plan, save-row, save-notes, all-classes, generate-word, etc.)
 
 // Exporter l'app pour Vercel
 module.exports = app;
