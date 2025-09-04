@@ -1,0 +1,273 @@
+/* --- Variables de couleur et style général --- */
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --success-color: #28a745;
+    --success-hover: #1e7e34;
+    --danger-color: #dc3545;
+    --danger-hover: #a71d2a;
+    --accent-color: #ffc107;
+    --accent-hover: #d39e00;
+    --background-color: #f8f9fa;
+    --surface-color: #ffffff;
+    --text-color: #343a40;
+    --muted-text: #6c757d;
+    --border-color: #dee2e6;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* --- Formulaire de Connexion --- */
+#login-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-form h1 {
+    margin-bottom: 25px;
+}
+
+#login-form div {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.password-container { position: relative; }
+.password-toggle-icon {
+    position: absolute;
+    top: 70%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--muted-text);
+}
+.remember-me-container { display: flex; align-items: center; }
+.remember-me-container label { margin-left: 8px; margin-bottom: 0; }
+#login-error {
+    color: var(--danger-color);
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+#logo, #logo-main {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+/* --- Contenu Principal --- */
+#main-content {
+    max-width: 1400px;
+    margin: auto;
+    background: var(--surface-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.main-header-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.title-user-info { flex-grow: 1; }
+.user-actions-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* --- Boutons --- */
+.pro-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    background-color: var(--primary-color);
+}
+.pro-button:hover { background-color: var(--primary-hover); }
+.pro-button:disabled { background-color: #a0c7f0; cursor: not-allowed; }
+
+.danger-button { background-color: var(--danger-color); }
+.danger-button:hover { background-color: var(--danger-hover); }
+.success-button { background-color: var(--success-color); }
+.success-button:hover { background-color: var(--success-hover); }
+.accent-button { background-color: var(--accent-color); color: #333; }
+.accent-button:hover { background-color: var(--accent-hover); }
+
+/* --- Filtres et Conteneurs d'Actions --- */
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    padding: 15px;
+    background-color: #fdfdfd;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+.filter-container label { font-weight: 500; }
+.filter-container select, .filter-container input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+.admin-section { flex-direction: column; align-items: flex-start; gap: 20px; }
+.admin-subsection { border-top: 1px dashed #ccc; padding-top: 15px; width: 100%;}
+
+/* --- Tableau --- */
+.table-responsive-wrapper { overflow-x: auto; }
+#planTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+#planTable th, #planTable td {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    vertical-align: top;
+}
+#planTable thead {
+    background-color: #e9ecef;
+    font-weight: 600;
+}
+#planTable tbody tr:nth-child(even) { background-color: #f8f9fa; }
+#planTable tbody tr:hover { background-color: #e2e6ea; }
+
+td.editable {
+    background-color: #fffbe6;
+    cursor: cell;
+}
+tr.modified {
+    background-color: #fff3cd !important;
+}
+.actions-column { text-align: center; width: 120px; }
+.save-row-button, .ai-lesson-plan-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--success-color);
+}
+.save-row-button:hover { color: var(--success-hover); }
+.ai-lesson-plan-button { color: var(--primary-color); }
+.ai-lesson-plan-button:hover { color: var(--primary-hover); }
+
+.save-indicator {
+    color: var(--success-color);
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+/* --- Section Notes --- */
+.notes-container {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+#notesInput {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* --- Messages d'Alerte et Progression --- */
+.message-alert-base {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 500;
+}
+.alert-success { background-color: #d4edda; color: #155724; }
+.alert-error { background-color: #f8d7da; color: #721c24; }
+.alert-warning { background-color: #fff3cd; color: #856404; }
+
+#progress-bar-container {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+#progress-bar {
+    width: 0%;
+    height: 25px;
+    background-color: var(--primary-color);
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    border-radius: 5px;
+    transition: width 0.4s ease;
+}
+
+/* --- Enseignants Incomplets --- */
+.toggle-incomplete-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+#incompleteTeachersDisplay {
+    background: #fffbe6;
+    border: 1px solid #ffeeba;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+}
+#incompleteTeachersDisplay h4 { margin-top: 0; }
+#incompleteList {
+    padding-left: 20px;
+    margin: 0;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}

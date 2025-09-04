@@ -1,0 +1,20 @@
+{
+  "name": "vercel-weekly-planner",
+  "version": "1.0.0",
+  "description": "Application de plans hebdomadaires pour Vercel",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.14.1",
+    "@vercel/postgres": "^0.9.0",
+    "cors": "^2.8.5",
+    "docxtemplater": "^3.47.2",
+    "express": "^4.19.2",
+    "express-fileupload": "^1.5.1",
+    "node-fetch": "^2.7.0",
+    "pizzip": "^3.1.7",
+    "xlsx": "^0.18.5"
+  }
+}
