@@ -6,8 +6,13 @@ const PizZip = require('pizzip');
 const Docxtemplater = require('docxtemplater');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const fetch = require('node-fetch');
-const { sql } = require('@vercel/postgres');
+const { createPool } = require('@vercel/postgres');
 
+const pool = createPool({
+  connectionString: process.env.DATABASE_CONNECTION_URL,
+});
+
+const sql = pool.sql;
 const app = express();
 
 // --- Middleware ---
@@ -221,3 +226,4 @@ app.post('/api/generate-word', async (req, res) => {
 
 // Exporter l'app pour Vercel
 module.exports = app;
+
