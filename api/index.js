@@ -1,4 +1,5 @@
 const express = require('express');
+console.log(`DEBUG: La variable DATABASE_CONNECTION_URL est : ${process.env.DATABASE_CONNECTION_URL}`);
 const cors = require('cors');
 const fileUpload = require('express-fileupload');
 const XLSX = require('xlsx');
@@ -226,4 +227,5 @@ app.post('/api/generate-word', async (req, res) => {
 
 // Exporter l'app pour Vercel
 module.exports = app;
+
 
